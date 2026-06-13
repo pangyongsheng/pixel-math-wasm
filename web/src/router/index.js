@@ -14,6 +14,22 @@ const routes = [
     component: () => import('../views/image/Grayscale.vue'),
   },
   {
+    path: '/image/invert',
+    component: () => import('../views/image/Invert.vue'),
+  },
+  {
+    path: '/image/brightness',
+    component: () => import('../views/image/Brightness.vue'),
+  },
+  {
+    path: '/image/threshold',
+    component: () => import('../views/image/Threshold.vue'),
+  },
+  {
+    path: '/image/color-filter',
+    component: () => import('../views/image/ColorFilter.vue'),
+  },
+  {
     path: '/transform',
     component: () => import('../views/transform/TransformIndex.vue'),
   },
