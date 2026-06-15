@@ -1,23 +1,17 @@
 <script setup>
 const features = [
-  { title: '灰度化', path: '/image/grayscale', desc: '6 种灰度算法实时切换', status: 'done' },
-  { title: '反色 / 负片', path: '/image/invert', desc: 'RGB 通道 255 反向，生成底片风格', status: 'done' },
-  { title: '亮度 / 对比度', path: '/image/brightness', desc: '滑块控制实时调色', status: 'done' },
-  { title: '二值化阈值', path: '/image/threshold', desc: '设定阈值只保留黑白两色', status: 'done' },
-  { title: '单色滤镜', path: '/image/color-filter', desc: '复古泛黄、冷色调等', status: 'done' },
-  { title: '均值模糊', path: '/image/blur', desc: '3x3 邻域平均做平滑', status: 'todo' },
-  { title: '马赛克', path: '/image/mosaic', desc: '分块取平均色打码', status: 'todo' },
-  { title: '暗角', path: '/image/vignette', desc: '四周衰减中心高亮', status: 'todo' },
-  { title: 'Sobel 边缘', path: '/image/sobel', desc: '卷积核提取轮廓', status: 'todo' },
-  { title: '浮雕', path: '/image/emboss', desc: '邻域差值生成凹凸感', status: 'todo' },
-  { title: 'RGB 通道偏移', path: '/image/rgb-shift', desc: '故障风错位', status: 'todo' },
+  { title: '灰度化',          path: '/image/grayscale',   desc: '6 种灰度算法实时切换',         status: 'done' },
+  { title: '反色 / 负片',     path: '/image/invert',      desc: 'RGB 通道 255 反向，生成底片风格', status: 'done' },
+  { title: '亮度 / 对比度',   path: '/image/brightness',  desc: '滑块控制实时调色',              status: 'done' },
+  { title: '二值化阈值',      path: '/image/threshold',   desc: '设定阈值只保留黑白两色',         status: 'done' },
+  { title: '单色滤镜',        path: '/image/color-filter', desc: '复古泛黄、冷色调等 7 种滤镜',   status: 'done' },
 ]
 </script>
 
 <template>
   <div class="index-page">
-    <h2>🎨 图像滤镜</h2>
-    <p class="subtitle">11 个单像素 / 邻域像素处理工具</p>
+    <h2>🎨 第一部分：单像素画笔</h2>
+    <p class="subtitle"><strong>给单像素上色</strong>——从灰度化到单色滤镜，最基础的图像处理工具集。</p>
 
     <div class="grid">
       <router-link
@@ -42,9 +36,7 @@ const features = [
 .index-page {
   padding: 40px;
 }
-h2 {
-  margin-bottom: 8px;
-}
+h2 { margin-bottom: 8px; }
 .subtitle {
   color: #888;
   margin-bottom: 30px;

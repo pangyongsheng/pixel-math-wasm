@@ -10,6 +10,10 @@ const routes = [
     component: () => import('../views/image/ImageIndex.vue'),
   },
   {
+    path: '/convolve',
+    component: () => import('../views/convolve/ConvolveIndex.vue'),
+  },
+  {
     path: '/image/grayscale',
     component: () => import('../views/image/Grayscale.vue'),
   },
@@ -44,6 +48,10 @@ const routes = [
   {
     path: '/probability',
     component: () => import('../views/probability/ProbabilityIndex.vue'),
+  },
+  {
+    path: '/synthesis',
+    component: () => import('../views/synthesis/SynthesisIndex.vue'),
   },
 ]
 

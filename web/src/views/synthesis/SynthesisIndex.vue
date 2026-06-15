@@ -1,15 +1,15 @@
 <script setup>
 const features = [
-  { title: '曼德博集合分形',  path: '/fractal/mandelbrot', desc: '浏览器 Canvas 生成经典分形图案，固定视角渲染', status: 'todo' },
-  { title: 'Julia 朱利亚分形', path: '/fractal/julia',      desc: '切换不同常数生成多种分形，自定义渐变配色',    status: 'todo' },
-  { title: '分形缩放与拖拽',    path: '/fractal/canvas',     desc: '鼠标滚轮缩放、拖拽平移分形视图',              status: 'todo' },
+  { title: 'K-Means 图像像素聚类',     path: '/synthesis/kmeans',      desc: '用向量距离+概率迭代，把图片颜色聚类成少数几种',   status: 'todo' },
+  { title: '简易朴素贝叶斯分类器',     path: '/synthesis/naive-bayes', desc: 'WASM 实现条件概率分类，做简单文本/图像区域分类',   status: 'todo' },
+  { title: '2D 粒子物理引擎',          path: '/synthesis/particle',    desc: '向量做位置速度、概率生成粒子、引力碰撞模拟',     status: 'todo' },
 ]
 </script>
 
 <template>
   <div class="index-page">
-    <h2>✨ 第四部分：分形画板与交互</h2>
-    <p class="subtitle"><strong>CPU 密集型可视化</strong>——纯前端渲染的无限细节分形图案，支持缩放拖拽。</p>
+    <h2>🚀 第七部分：图像里的世界：动画、物理与智能</h2>
+    <p class="subtitle"><strong>线代 + 概率 + 物理的终极融合</strong>——图像聚类、AI 分类、2D 粒子物理引擎。</p>
 
     <div class="grid">
       <router-link

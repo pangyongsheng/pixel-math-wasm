@@ -67,13 +67,11 @@ pub fn threshold_otsu(pixels: &[u8], width: u32, height: u32) -> Vec<u8> {
 
     // 1. 一次遍历：灰度化 + 统计直方图
     let mut histogram = [0u32; 256];
-    let mut grays: Vec<u8> = Vec::with_capacity(pixel_count);
 
     for i in (0..len).step_by(4) {
         let gray = (0.2126 * pixels[i] as f32
                   + 0.7152 * pixels[i + 1] as f32
                   + 0.0722 * pixels[i + 2] as f32) as u8;
-        grays.push(gray);
         histogram[gray as usize] += 1;
     }
 
@@ -92,6 +90,7 @@ pub fn threshold_otsu(pixels: &[u8], width: u32, height: u32) -> Vec<u8> {
 
     for t in 0..256 {
         weight_bg += histogram[t] as f32;
+        // 未统计到像素，跳过 不用计算类间方差
         if weight_bg == 0.0 {
             continue;
         }
@@ -115,19 +114,6 @@ pub fn threshold_otsu(pixels: &[u8], width: u32, height: u32) -> Vec<u8> {
         }
     }
 
-    // 4. 用最佳阈值二值化
-    let t = best_threshold;
-    let mut result = Vec::with_capacity(len);
-    let mut gray_idx = 0;
-
-    for i in (0..len).step_by(4) {
-        let bin: u8 = if grays[gray_idx] > t { 255 } else { 0 };
-        result.push(bin);
-        result.push(bin);
-        result.push(bin);
-        result.push(pixels[i + 3]); // Alpha
-        gray_idx += 1;
-    }
-
-    result
+    // 4. 用最佳阈值二值化（直接调前面的 threshold_with）
+    threshold_with(pixels, width, height, best_threshold)
 }
