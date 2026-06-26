@@ -34,6 +34,30 @@ const routes = [
     component: () => import('../views/image/ColorFilter.vue'),
   },
   {
+    path: '/image/blur',
+    component: () => import('../views/convolve/Blur.vue'),
+  },
+  {
+    path: '/image/mosaic',
+    component: () => import('../views/convolve/Mosaic.vue'),
+  },
+  {
+    path: '/image/vignette',
+    component: () => import('../views/convolve/Vignette.vue'),
+  },
+  {
+    path: '/image/sobel',
+    component: () => import('../views/convolve/Sobel.vue'),
+  },
+  {
+    path: '/image/emboss',
+    component: () => import('../views/convolve/Emboss.vue'),
+  },
+  {
+    path: '/image/rgb-shift',
+    component: () => import('../views/convolve/RgbShift.vue'),
+  },
+  {
     path: '/transform',
     component: () => import('../views/transform/TransformIndex.vue'),
   },
